@@ -1,4 +1,31 @@
-
+@model IEnumerable<Club>
+@{
+    ViewData["Title"] = "Club Page";
+}
 <div>
     Hello Club Index Chnage
+</div>
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach (var club in Model)
+            {
+                <div class="card shadow-sm">
+                    <img src="@club.Image" alt="error" />
+                    <div class="card-body">
+                        <p class="fw-bold">@club.Title</p>
+                        <p class="card-text">@club.Description</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a asp-contoller="Club" asp-action="Detail" asp-route-id="@club.Id"
+                                    class="btn btn-sm btn-outline-secondary">View</a>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-body-secondary">@club.ClubCategory</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </div>

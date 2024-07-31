@@ -1,0 +1,30 @@
+@model Race
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="main-container">
+    <section class="space-sm">
+        <div class="container">
+            <img alt="Image" src="@Model.Image" class="rounded img-fluid" />
+            <div class="row justify-content-between my-3">
+                <div class="col-12 col-md-8 col-lg-7">
+                    <h1 class="lead mb-3 fw-bold">@Model.Title</h1>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <hr>
+                    <p>
+                        @Model.Address.State
+                    </p>
+                    <p>
+                        @Model.Address.City
+                    </p>
+                    <p>
+                        @Model.Address.Street
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
